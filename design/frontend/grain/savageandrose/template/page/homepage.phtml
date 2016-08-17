@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="main-container col1-layout">
+            <div class="main">
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    
+                    <!-- MAIN HERO -->
+                    <div class="full-width home-hero">
+                        <a href="/collections/pearl.html">
+                            <img class="tablet" src="skin/frontend/grain/savageandrose/images/SandR-1920x767.png" alt="dummy image" />   
+                            <img class="mobile" src="skin/frontend/grain/savageandrose/images/SandR-767x767-alt.jpg" alt="dummy image" />
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <div class="caption-text">
+                                        <h1 class="monsterfont">Introducing<br>the Pearl<br>Collection</h1>
+                                    </div>
+                                    <div class="button3">Discover</div>
+                                </div>
+                            </div>
+                        </a>    
+                    </div>
+
+                    <!-- SECONDARY BLOCKs -->
+                    <div class="full-width">
+                        <div class="half-width">
+                            <a href="/collections/delicate.html">
+                                <img src="skin/frontend/grain/savageandrose/images/SandR-960x720px-1.png" alt="dummy image" />
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-text">
+                                            <h2 class="heading3">Discover<br>Delicate</h2>
+                                        </div>
+                                        <div class="button3">Shop Now</div>
+                                    </div>
+                                </div>
+                            </a>           
+                        </div>
+                        <div class="half-width">
+                            <a href="/collections/circle.html">
+                                <img src="skin/frontend/grain/savageandrose/images/SandR-960x720px-2.png" alt="dummy image" />  
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-text">
+                                            <h2 class="heading3">Elegant CIRCLES<br>Collection</h2>
+                                        </div>
+                                        <div class="button3">Explore</div>
+                                    </div>
+                                </div>
+                            </a>          
+                        </div>
+                    </div>
+
+                    <!-- TERTIARYCONTENT -->
+                    <div class="full-width">
+                        <div class="third-width">
+                            <a href="/our-world/as-seen-on">
+                                <img src="skin/frontend/grain/savageandrose/images/SandR-767x767px-1.png" alt="dummy image" />
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-text">
+                                            <h3 class="minimonsterfont">As Seen On</h3>
+                                        </div>
+                                        <div class="button3">Find Out More</div>
+                                    </div>
+                                </div>
+                            </a>        
+                        </div>
+                        <div class="third-width middle">
+                            <a href="#">
+                                <div id="ig">
+                                    <img src="skin/frontend/grain/savageandrose/images/SandR-767x767px-2.png" alt="dummy image" />
+                                </div>
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-text">
+                                            <h3 class="minimonsterfont">Follow Us<br>On Instagram</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>         
+                        </div>
+                        <div class="third-width">
+                            <a href="/our-world/news">
+                                <img src="skin/frontend/grain/savageandrose/images/SandR-767x767px-3.png" alt="dummy image" />
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-text">
+                                            <h3 class="minimonsterfont">Latest News</h3>
+                                        </div>
+                                        <div class="button3">Sign Up</div>
+                                    </div>
+                                </div>
+                            </a>            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('global_cookie_notice') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+
+<script type="text/javascript">
+/*
+        jQuery(document).ready(function() {
+            var feed = new Instafeed({
+                get: 'user',
+                userId: '262956837',
+                accessToken: '50672391.6f8c5e0.85413253d0904b88a6125bddcfd115e3',
+                target: 'ig',
+                resolution: 'standard_resolution',
+                limit: 1,
+                template: '<img src="{{image}}" />'
+            });
+
+            feed.run();
+     
+       
+
+         }); */
+</script>
+</body>
+</html>
+

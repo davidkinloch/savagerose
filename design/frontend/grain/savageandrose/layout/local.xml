@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/savageandrose.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/savageandrose.css</name>
+            </action>
+                <action method="removeItem">
+                    <type>skin_css</type>
+                    <name>css/madisonisland.css</name>
+                </action>
+        </reference>
+        
+
+
+        <!--
+        <reference name="head">
+            <action method="addLinkRel">
+                <rel>author</rel>
+                <href>https://plus.google.com/115785811679660355541/</href>
+            </action>
+            <action method="addLinkRel">
+                <rel>publisher</rel>
+                <href>https://plus.google.com/</href>
+            </action>
+        </reference>
+        -->
+
+        <!--
+        <reference name="root">
+            <block type="core/text_list" name="newreference" as="newreference" translate="label">
+                <label>New Reference</label>
+            </block>
+        </reference>
+        <reference name="newreference">
+            <block type="core/template" name="newreferenceblock" template="newreference.phtml" />
+        </reference>
+        -->
+        
+
+
+        <catalog_category_default>
+
+             <reference name="newreference">
+                <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml">
+                <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
+            </block>
+            </reference> 
+
+            <reference name="content">
+             
+            </reference>
+           
+        </catalog_category_default>
+
+        <remove name="catalog.compare.sidebar"/>
+        <remove name="right.reports.product.compared"/>
+        <!-- Mage_Poll -->
+        <remove name="right.poll" />
+        <!--  Paypal ad -->
+        <remove name="paypal.partner.right.logo" /> 
+    
+    </default>
+</layout>

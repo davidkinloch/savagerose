@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Grain_Layouts>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Grain_Layouts>
+  </modules>
+</config>
