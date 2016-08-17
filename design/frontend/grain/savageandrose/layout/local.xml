@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.1.0">
     <default>
-        
+        <!-- add js and css -->
         <reference name="head">
             <action method="addItem">
                 <type>skin_js</type>
@@ -18,7 +18,10 @@
                 </action>
         </reference>
         
-
+        <reference name="root">
+            <block type="core/text_list" name="hero" as="hero"></block>
+            <block type="core/text_list" name="filters" as="filters"></block>
+        </reference>
 
         <!--
         <reference name="head">
@@ -33,32 +36,23 @@
         </reference>
         -->
 
+    
+       
+        
         <!--
-        <reference name="root">
-            <block type="core/text_list" name="newreference" as="newreference" translate="label">
-                <label>New Reference</label>
-            </block>
-        </reference>
         <reference name="newreference">
             <block type="core/template" name="newreferenceblock" template="newreference.phtml" />
         </reference>
         -->
         
+        <!-- DEFAULT LAYOUT IS LEFT SIDEBAR -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
 
 
-        <catalog_category_default>
 
-             <reference name="newreference">
-                <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml">
-                <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
-            </block>
-            </reference> 
 
-            <reference name="content">
-             
-            </reference>
-           
-        </catalog_category_default>
 
         <remove name="catalog.compare.sidebar"/>
         <remove name="right.reports.product.compared"/>
@@ -66,6 +60,52 @@
         <remove name="right.poll" />
         <!--  Paypal ad -->
         <remove name="paypal.partner.right.logo" /> 
-    
+        
+
     </default>
+
+    <catalog_category_layered>
+        <reference name="hero">
+               
+               <block type="core/template" name="cataloghero" template="catalog/category/hero.phtml" as="cataloghero"></block>
+                
+        </reference>
+
+
+<!--
+        <reference name="left_first">
+            <action method="unsetChild">
+                <name>catalog.leftnav</name>
+            </action>
+
+            <action method="unsetChild">
+                <name>catalog.leftnav.state.renderers
+                    </name>
+            </action>
+        </reference>
+
+        <reference name="filters">
+               
+               <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
+                <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
+            </block>
+            </reference>
+-->                
+        
+
+        <reference name="content">
+        
+             
+
+        </reference>
+        
+        <reference name="product_list">
+            <action method="setColumnCount">
+                <count>4</count>
+            </action>
+        </reference>
+        
+    
+    </catalog_category_layered>
+
 </layout>
