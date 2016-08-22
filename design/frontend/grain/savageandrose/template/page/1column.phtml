@@ -54,7 +54,9 @@
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('filters') ?>
+                    <?php if ($_filters = $this->getChildHtml('filters')): ?>
+                        <div class="col-left-first"><?php echo $_filters;   ?></div>
+                    <?php endif; ?>   
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>

@@ -71,33 +71,16 @@
                 
         </reference>
 
+        <remove name="left_first" />
 
-<!--
-        <reference name="left_first">
-            <action method="unsetChild">
-                <name>catalog.leftnav</name>
-            </action>
 
-            <action method="unsetChild">
-                <name>catalog.leftnav.state.renderers
-                    </name>
-            </action>
-        </reference>
-
+    
         <reference name="filters">
-               
-               <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
+            <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
                 <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
             </block>
-            </reference>
--->                
-        
-
-        <reference name="content">
-        
-             
-
         </reference>
+              
         
         <reference name="product_list">
             <action method="setColumnCount">
