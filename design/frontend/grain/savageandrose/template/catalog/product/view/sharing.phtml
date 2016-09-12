@@ -40,8 +40,11 @@
     <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
     <li>
         <?php $_u = 'p[url]=' . $_productUrl . '&p[images][0]=' . $_productImageUrl . '&p[title]=' . $_productName . '&p[summary]=' . urlencode(trim($_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description'))); ?>
-        <a href="<?php echo 'http://www.facebook.com/sharer.php?s=100&' . $_u; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Facebook')) ?>" class="link-facebook">
-            <i class="fa fa-facebook fa-lg"></i>
+        
+
+
+        <a href="<?php echo 'https://www.facebook.com/dialog/feed?app_id=183960255361266&display=popup&amp;caption=&link=' . $_u; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Facebook')) ?>" class="link-facebook">
+            <i class="fa fa-facebook"></i>
         </a>
     </li>
     <li>

@@ -100,4 +100,9 @@
         </reference>
     </catalog_product_view>
 
+    <!-- remove estmated delviery -->
+    <checkout_cart_index>
+        <remove name="checkout.cart.shipping" />
+        <remove name="checkout.cart.crosssell" />
+    </checkout_cart_index>
 </layout>
