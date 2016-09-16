@@ -84,6 +84,10 @@
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                 <?php endif;?>
 
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                <?php endif;?>
+
                  <div class="add-to-cart-wrapper">
                     <?php echo $this->getChildHtml('product_type_data') ?>
                     <?php echo $this->getChildHtml('extrahint') ?>
@@ -131,9 +135,6 @@
            
 
             <div class="clearer"></div>
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-            <?php endif;?>
         </form>
         <script type="text/javascript">
         //<![CDATA[
