@@ -7,6 +7,11 @@
           <label>Homepage Layout</label>
           <template>page/homepage.phtml</template>
         </homepage_layout>
+
+        <collections_layout translate="label">
+          <label>Collections Layout</label>
+          <template>page/collections.phtml</template>
+        </collections_layout>
       </layouts>
     </page>
   </global>
