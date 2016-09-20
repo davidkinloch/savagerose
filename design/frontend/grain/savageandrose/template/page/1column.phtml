@@ -46,18 +46,22 @@
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
-        <?php echo $this->getChildHtml('header') ?>
+        <div class="main-wrapper-lo">
+            <div class="main-wrapper-in">
+                <?php echo $this->getChildHtml('header') ?>
 
-        <div class="main-container col1-layout">
-            <?php echo $this->getChildHtml('hero') ?>
-            <div class="main">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php if ($_filters = $this->getChildHtml('filters')): ?>
-                        <div class="col-left-first"><?php echo $_filters;   ?></div>
-                    <?php endif; ?>   
-                    <?php echo $this->getChildHtml('content') ?>
+                <div class="main-container col1-layout">
+                    <?php echo $this->getChildHtml('hero') ?>
+                    <div class="main">
+                        <?php echo $this->getChildHtml('breadcrumbs') ?>
+                        <div class="col-main">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php if ($_filters = $this->getChildHtml('filters')): ?>
+                                <div class="col-left-first"><?php echo $_filters;   ?></div>
+                            <?php endif; ?>   
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
