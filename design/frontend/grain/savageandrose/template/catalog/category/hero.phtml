@@ -1,9 +1,11 @@
 <?php $category = Mage::getSingleton('catalog/layer')->getCurrentCategory(); ?>
 
 <div class="full-width categoryheader">
-    <img class="tablet categoryheader--image" src="http://dummyimage.com/1920x250/ccc/555" alt="dummy image" />   
+    <img class="tablet categoryheader--image" src="<?php echo Mage::getBaseUrl('media') . 'catalog' . DS . 'category' . DS . $category->getThumbnail() ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>" />   
     <div class="categoryheader--caption">
-        <h1 class="categoryheader--title">Cateogry Title</h1>
-        <h2 class="categoryheader--description">Description</h2>
+	    <div class="categoryheader--captioninner">
+	        <h1 class="categoryheader--title"><?php echo $this->htmlEscape($category->getName()) ?></h1>
+	        <h2 class="categoryheader--description"><?php echo $this->htmlEscape($category->getDescription()) ?></h2>
+	    </div>
     </div>      
 </div>
