@@ -23,7 +23,7 @@
                             <?php
                             $category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
                             $categories = $category->getCollection()
-                                    ->addAttributeToSelect(array('name', 'thumbnail', 'description'))
+                                    ->addAttributeToSelect(array('name', 'thumbnail', 'image', 'description'))
                                     ->addAttributeToFilter('is_active', 1)
                                     ->addIdFilter($category->getChildren())
                             ?>
@@ -32,7 +32,7 @@
                                 <?php foreach ($categories as $category): ?>
                                     <div class="half-width collection--item">
                                         <a href="<?php echo $category->getUrl() ?>">
-                                            <img src="<?php echo Mage::getBaseUrl('media') . 'catalog' . DS . 'category' . DS . $category->getThumbnail() ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>">
+                                            <img src="<?php echo Mage::getBaseUrl('media') . 'catalog' . DS . 'category' . DS . $category->getImage() ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>">
                                             <div class="caption">
                                                 <div class="caption-inner">
                                                     <div class="caption-text">
