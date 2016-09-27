@@ -12,6 +12,22 @@
           <label>Collections Layout</label>
           <template>page/collections.phtml</template>
         </collections_layout>
+
+        <company-page_layout translate="label">
+          <label>Company Page Layout</label>
+          <template>page/company-page.phtml</template>
+        </company-page_layout>
+
+        <shoppingonline-page_layout translate="label">
+          <label>Shopping Online Page Layout</label>
+          <template>page/shoppingonline-page.phtml</template>
+        </shoppingonline-page_layout>
+
+        <information-page_layout translate="label">
+          <label>Information Page Layout</label>
+          <template>page/information-page.phtml</template>
+        </information-page_layout>
+
       </layouts>
     </page>
   </global>
