@@ -30,13 +30,12 @@
         <h2><?php echo $this->__('Also available in') ?></h2>
     </div>
     <div class="block-content">
-        <ol class="mini-products-list" id="block-related">
+        <select class="mini-products-list" id="block-related" onchange="window.location=this.value">
+        <option selected="selected">See other styles...</option>
         <?php foreach($this->getItems() as $_item): ?>
-            <li class="item">       
-                <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $_item->getplp_description(); ?></a>
-            </li>
+            <option value="<?php echo $_item->getProductUrl() ?>"><?php echo $_item->getplp_description(); ?></option>
         <?php endforeach ?>
-        </ol>
+        </select>
         <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
     </div>
 </div>

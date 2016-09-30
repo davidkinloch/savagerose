@@ -74,7 +74,8 @@
                 <div class="review-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
                 </div>
-
+                
+                <?php echo $this->getChildHtml('related_products') ?>
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
@@ -125,7 +126,7 @@
                     <?php endif; ?>
                 </div>
                 
-                 <?php echo $this->getChildHtml('related_products') ?>
+                 
             </div>
 
            
