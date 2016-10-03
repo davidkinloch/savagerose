@@ -79,7 +79,6 @@
                     <tbody>
                     <?php foreach ($this->getRatings() as $_rating): ?>
                         <tr>
-              
                         <?php foreach ($_rating->getOptions() as $_option): ?>
                             <td class="value"><label for="<?php echo $this->escapeHtml($_rating->getRatingCode()) ?>_<?php echo $_option->getValue() ?>"><input type="radio" name="ratings[<?php echo $_rating->getId() ?>]" id="<?php echo $this->escapeHtml($_rating->getRatingCode()) ?>_<?php echo $_option->getValue() ?>" value="<?php echo $_option->getId() ?>" class="radio" /></label></td>
                         <?php endforeach; ?>
