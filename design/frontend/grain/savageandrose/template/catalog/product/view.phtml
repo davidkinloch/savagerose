@@ -79,7 +79,7 @@
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
-                <?php echo $this->getChildHtml('other');?>
+                
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
@@ -126,7 +126,9 @@
                     <?php endif; ?>
                 </div>
                 
-                 
+                     <?php echo $this->getChildHtml('product_additional_data') ?>
+
+                     <?php echo $this->getChildHtml('other');?>
             </div>
 
            
@@ -193,6 +195,6 @@
    
 
     <?php echo $this->getChildHtml('upsell_products') ?>
-    <?php echo $this->getChildHtml('product_additional_data') ?>
+
 
 </div>
