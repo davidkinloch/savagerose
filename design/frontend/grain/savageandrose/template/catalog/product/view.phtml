@@ -79,7 +79,7 @@
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
-                
+                <?php echo $this->getChildHtml('other');?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
@@ -122,13 +122,24 @@
                                     <div class="tab-content"><?php echo $html ?></div>
                                 </dd>
                             <?php endforeach;?>
+                                <dt class="tab"><span>Delivery &amp; Returns</span></dt>
+                                <dd class="tab-container">
+                                    <div class="tab-content">
+                                        <ul>
+                                            <li>Free shipping worldwide</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                                <dt class="tab"><span>Assay Office Guarantee</span></dt>
+                                <dd class="tab-container">
+                                    <div class="tab-content">All of our jewellery at Savage and Rose has been hallmarked at the Assay Office in London which fulfils the requirements established by the Hallmarking Act 1973. This guarantees the purity of the metals used in each piece.</div>
+                                </dd>
+
                         </dl>
                     <?php endif; ?>
                 </div>
                 
-                     <?php echo $this->getChildHtml('product_additional_data') ?>
-
-                     <?php echo $this->getChildHtml('other');?>
+                 
             </div>
 
            
@@ -195,6 +206,6 @@
    
 
     <?php echo $this->getChildHtml('upsell_products') ?>
-
+    <?php echo $this->getChildHtml('product_additional_data') ?>
 
 </div>
