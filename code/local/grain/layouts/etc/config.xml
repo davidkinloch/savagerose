@@ -28,6 +28,11 @@
           <template>page/information-page.phtml</template>
         </information-page_layout>
 
+        <contact-page_layout translate="label">
+          <label>Contact Page Layout</label>
+          <template>page/contact-page.phtml</template>
+        </contact-page_layout>
+
       </layouts>
     </page>
   </global>

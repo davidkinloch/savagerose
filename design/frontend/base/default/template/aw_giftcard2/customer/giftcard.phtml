@@ -1,0 +1,92 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This software is designed to work with Magento community edition and
+ * its use on an edition other than specified is prohibited. aheadWorks does not
+ * provide extension support in case of incorrect edition use.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Giftcard2
+ * @version    2.0.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?><div class="page-title">
+    <h1><?php echo $this->__('Gift Card') ?></h1>
+</div>
+<div>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php if ($this->canShowGiftcardInfo()): ?>
+        <div id="aw-giftcard2-info-block">
+            <div class="fieldset">
+                <h2 class="legend"><?php echo $this->__('Gift Card Code Information');?></h2>
+                <table>
+                    <tr>
+                        <td class="label">
+                            <?php echo $this->__('Code');?>
+                        </td>
+                        <td>
+                            <strong class="giftcard-code"><?php echo $this->getCode();?></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><?php echo $this->__('Availability');?></td>
+                        <td><strong class="giftcard-availability"><?php echo $this->getAvailability();?></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><?php echo $this->__('Is Used');?></td>
+                        <td><strong class="giftcard-is-used"><?php echo $this->getIsUsed();?></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><?php echo $this->__('Balance');?></td>
+                        <td>
+                            <strong class="giftcard-balance">
+                                <span class="price">
+                                    <?php echo Mage::helper('core')->currency($this->getBalance());?>
+                                </span>
+                            </strong>
+                        </td>
+                    </tr>
+                    <?php if ($this->getExpireAt()): ?>
+                        <tr>
+                            <td class="label"><?php echo $this->__('Expires');?></td>
+                            <td><strong class="giftcard-expired-at"><?php echo $this->formatDate($this->getExpireAt(), 'short')?></strong></td>
+                        </tr>
+                    <?php endif;?>
+                </table>
+            </div>
+        </div>
+    <?php endif;?>
+    <form id="aw_giftcard2-form" action="<?php echo $this->getFormUrl(); ?>" method="post">
+        <div class="fieldset">
+            <ul class="form-list">
+                <li>
+                    <div class="input-box">
+                        <label class="required" for="giftcard_code"><em>*</em><?php echo $this->__('Enter gift card code') ?></label>
+                        <input class="required-entry input-text" id="giftcard_code" name="giftcard_code" value="<?php echo $this->getCurrentGiftcard(); ?>" />
+                    </div>
+                    <div class="buttons-set">
+                        <button class="button check-gc-status" id="check-gc-status" onclick="AwGiftcardForm.submit(this)" type="button" value="<?php echo $this->__('Check status and balance') ?>">
+                            <span><span><?php echo $this->__('Check status and balance') ?></span></span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var AwGiftcardForm = new VarienForm('aw_giftcard2-form');
+    </script>
+</div>
