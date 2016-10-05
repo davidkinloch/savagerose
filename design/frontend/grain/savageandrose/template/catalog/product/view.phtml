@@ -109,11 +109,13 @@
                         <div class="add-to-box">
                             <?php echo $this->getChildHtml('addto') ?>
                             <?php echo $this->getChildHtml('sharing') ?>
+
+                            
                         </div>
                     <?php endif; ?>
                 </div>
 
-                <div class="product-collateral toggle-content tabs">
+                <div class="product-collateral toggle-content tabs accordion-open">
                     <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
                         <dl id="collateral-tabs" class="collateral-tabs">
                             <?php foreach ($detailedInfoGroup as $alias => $html):?>
@@ -122,22 +124,40 @@
                                     <div class="tab-content"><?php echo $html ?></div>
                                 </dd>
                             <?php endforeach;?>
-                                <dt class="tab"><span>Delivery &amp; Returns</span></dt>
-                                <dd class="tab-container">
-                                    <div class="tab-content">
-                                        <ul>
-                                            <li>Free shipping worldwide</li>
-                                        </ul>
-                                    </div>
-                                </dd>
+                                <?php 
+                                    $currentCatIds = $_product->getCategoryIds();
+                                    $categoryCollection = Mage::getResourceModel('catalog/category_collection')
+                                                         ->addAttributeToSelect('name')
+                                                         ->addAttributeToSelect('url')
+                                                         ->addAttributeToFilter('entity_id', $currentCatIds)
+                                                         ->addIsActiveFilter();
+                                ?>
+                                <?php
+                                    if (in_array("11", $currentCatIds)) {
+                                        echo '<dt class="tab"><span>Intricate</span></dt><dd><div class="tab-content">Celebrating the delicate nature of gold, this sumptuous collection features finely spun entwined chains, punctuated with lustrous golden beads.</div></dd>';
+                                    }
+                         
+                                    if (in_array("12", $currentCatIds)) {
+                                        echo '<dt class="tab"><span>Circle</span></dt><dd><div class="tab-content">The humble circle in all its glory is the inspiration for this series of captivating pieces with multiple interpretations of the quintessential geometric shape.</div></dd>';
+                                    }
+                                    if (in_array("13", $currentCatIds)) {
+                                        echo '<dt class="tab"><span>Pearl</span></dt><dd><div class="tab-content">Dark, iridescent Tahitian pearls juxtaposed with their white or yellow South Sea and Akoya counterparts allows their natural beauty to shine through.</div></dd>';
+                                    }
+                                    if (in_array("14", $currentCatIds)) {
+                                        echo '<dt class="tab"><span>Ornate</span></dt><dd><div class="tab-content">Each exquisite design shines with contemporary sophistication, harmonising delicate shapes, twinkling diamonds and sparkling crystals.</div></dd>';
+                                    }
+                                ?>
+
                                 <dt class="tab"><span>Assay Office Guarantee</span></dt>
                                 <dd class="tab-container">
                                     <div class="tab-content">All of our jewellery at Savage and Rose has been hallmarked at the Assay Office in London which fulfils the requirements established by the Hallmarking Act 1973. This guarantees the purity of the metals used in each piece.</div>
                                 </dd>
-
+                                
                         </dl>
                     <?php endif; ?>
                 </div>
+
+
                 
                  
             </div>
@@ -203,7 +223,18 @@
         </script>
     </div>
 
-   
+   <div class="product-collateral toggle-content tabs" id="reviews-tab">
+        <?php if ($review = $this->getChildGroup('review_info', 'getChildHtml')):?>
+            <dl id="collateral-tabs" class="collateral-tabs">
+                <?php foreach ($review as $alias => $html):?>
+                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt> 
+                    <dd class="tab-container">
+                        <div class="tab-content"><?php echo $html ?></div>
+                    </dd>
+                <?php endforeach;?>
+            </dl>
+        <?php endif; ?>
+    </div>
 
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
