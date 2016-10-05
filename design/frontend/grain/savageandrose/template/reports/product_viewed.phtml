@@ -34,7 +34,7 @@
         <?php foreach ($_products as $_item): ?>
             <li class="item">
                 <a href="<?php echo $this->getProductUrl($_item) ?>">
-                    <span class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(280)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" data-alt-src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize($_imgSize) ?>" /></span>
+                    <span class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" data-alt-src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize($_imgSize) ?>" /></span>
                 </a>
         
                 <div class="product-info">
