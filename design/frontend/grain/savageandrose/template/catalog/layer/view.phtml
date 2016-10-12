@@ -41,7 +41,7 @@
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>
                 <?php if($_filter->getItemsCount()): ?>
-                    <div class="filterblock">
+                    <div class="filterblock <?php echo $this->__($_filter->getName()) ?>">
                         <div class="filtername"><?php echo $this->__($_filter->getName()) ?></div>
                         <div class="filteroptions"><?php echo $_filter->getHtml() ?></div>
                     </div>
