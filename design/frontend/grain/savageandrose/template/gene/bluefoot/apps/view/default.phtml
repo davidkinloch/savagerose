@@ -20,9 +20,7 @@ $_imageHelper = Mage::helper('gene_bluefoot/image');
 
 <div class="bluefoot-content-list-content bluefoot-content-list-default">
     <?php if ($_entities->getSize()): ?>
-        <div class="toolbar">
-            <?php echo $this->getPagerHtml(); ?>
-        </div>
+       
         <div class="bluefoot-content-list-items<?php echo ($this->getGridView()) ? ' bluefoot-row' : ''; ?>">
             <?php $_i = 0; foreach ($_entities as $_entity): $_i++; ?>
 
@@ -68,26 +66,27 @@ $_imageHelper = Mage::helper('gene_bluefoot/image');
                             </a>
                         <?php endif; ?>
 
-                        <h4 class="bluefoot-content-item-title">
-                            <a href="<?php echo $this->getEntityUrl($_entity); ?>"><?php echo $_entity->getTitle(); ?></a>
-                        </h4>
+                        <div class="bluefoot-content-item-text-block">
+                            <h4 class="bluefoot-content-item-title">
+                                <a href="<?php echo $this->getEntityUrl($_entity); ?>"><?php echo $_entity->getTitle(); ?></a>
+                            </h4>
 
-                        <?php if ($_date = $_entity->getPublishedDate()): ?>
-                            <div class="bluefoot-content-meta">
-                                <p class="bluefoot-published-date"><?php echo $this->__('Published %s', $_dateHelper->getFriendlyDateTime(strtotime($_date))); ?></p>
-                            </div>
-                        <?php endif; ?>
+                            <?php if ($_date = $_entity->getPublishedDate()): ?>
+                                <div class="bluefoot-content-meta">
+                                    <p class="bluefoot-published-date"><?php echo $this->__('Published %s', $_dateHelper->getFriendlyDateTime(strtotime($_date))); ?></p>
+                                </div>
+                            <?php endif; ?>
 
-                        <?php if ($_excerpt = $_entity->getExcerpt()): ?>
-                            <div class="bluefoot-content-summary">
-                                <p><?php echo $_excerpt; ?></p>
-                            </div>
-                        <?php endif; ?>
+                            <?php if ($_excerpt = $_entity->getExcerpt()): ?>
+                                <div class="bluefoot-content-summary">
+                                    <p><?php echo $_excerpt; ?> <a onclick="location.href='<?php echo $this->getEntityUrl($_entity); ?>'" class="bluefoot-read-more-link">
+                                <?php echo $this->__('Continue reading.'); ?>
+                            </a></p>
+                                </div>
+                            <?php endif; ?>
 
-                        <button type="button" onclick="location.href='<?php echo $this->getEntityUrl($_entity); ?>'" class="button bluefoot-read-more-link">
-                            <span><span><?php echo $this->__('Continue Reading &raquo;'); ?></span></span>
-                        </button>
-
+                            
+                        </div>
                     </div>
                 <?php endif; ?>
 
