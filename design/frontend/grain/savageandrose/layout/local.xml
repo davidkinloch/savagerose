@@ -28,6 +28,11 @@
             <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
 
+        <!-- rmeove recently viewed from right -->
+        <reference name="right">
+             <action method="unsetChild"><name>right.reports.product.viewed</name></action>
+        </reference>
+
         <!-- remove junk -->
         <remove name="catalog.compare.sidebar"/>
         <remove name="right.reports.product.compared"/>
@@ -36,7 +41,7 @@
         <!--  Paypal ad -->
         <remove name="paypal.partner.right.logo" /> 
         
-
+        
     </default>
 
     <!-- CATALOG LAYOUTS -->
