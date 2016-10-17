@@ -38,12 +38,12 @@
 ?>
 <div class="product-image product-image-zoom">
     <div class="product-image-gallery">
-        <img id="image-main"
+        <img id="image-main" itemprop="image"
              class="gallery-image visible"
              src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
              alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
              title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
-
+                
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
             <img id="image-<?php echo $i; ?>"
