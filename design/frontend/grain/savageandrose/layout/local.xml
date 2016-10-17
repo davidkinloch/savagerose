@@ -40,7 +40,8 @@
         <remove name="right.poll" />
         <!--  Paypal ad -->
         <remove name="paypal.partner.right.logo" /> 
-        
+        <!-- remove reorder -->
+        <remove name="sale.reorder.sidebar"></remove>
         
     </default>
 
