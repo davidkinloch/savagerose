@@ -55,19 +55,24 @@
                     <div class="main">
                         <?php echo $this->getChildHtml('breadcrumbs') ?>        
                         <?php // This left_first block will display above the main content on smaller viewports ?>
-                    
+                        <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
                         <div class="col-left sidebar col-left-first">
                             <div class="block block-cms-menu">
-                                <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("shopping-online-menu")->toHtml();?>
+                                <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("company-menu")->toHtml();?>
                             </div>
                         </div>
              
                         <div class="col-main">
-                            <div class="col-50 col-left">
-                                <?php echo $this->getChildHtml('content') ?>
+                            <div class="page-title">
+                                <h1>GET IN TOUCH WITH OUR CUSTOMER CARE TEAM</h1>
                             </div>
-                            <div class="col-50 col-right">
-                                <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("general-customer-care")->toHtml();?>
+                            <div class="col2-set">
+                                <div class="col-1">
+                                    <?php echo $this->getChildHtml('content') ?>
+                                </div>
+                                <div class="col-2">
+                                    <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("general-customer-care")->toHtml();?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-left sidebar">
