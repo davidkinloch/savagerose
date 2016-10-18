@@ -141,17 +141,28 @@
 
 
     <contacts_index_index>
-        <action method="unsetChild"><alias>breadcrumbs</alias></action>
-          <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs">
+        <reference name="root">
+            <action method="setTemplate"><template>page/contact-page.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="contacts"><title>Contact Us</title></action>
+        </reference>
+
+        <reference name="breadcrumbs" as="breadcrumbs">
             <action method="addCrumb">
-              <crumbName>home</crumbName>
-              <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+                <crumbName>home</crumbName>
+                <crumbInfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>/</link>
+                </crumbInfo>
             </action> 
             <action method="addCrumb">
-              <crumbName>contacts</crumbName>
-              <crumbInfo><label>Contact us</label><title>Contact us</title></crumbInfo>
+                <crumbName>contactus</crumbName>
+                <crumbInfo>
+                    <label>Contact us</label>
+                    <title>Contact us</title>
+                </crumbInfo>
             </action>
-          </block>
+        </reference>
     </contacts_index_index>
 
     <!-- search results -->
