@@ -58,13 +58,17 @@
                     
                         <div class="col-left sidebar col-left-first">
                             <div class="block block-cms-menu">
-                                Contact Us
                                 <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("shopping-online-menu")->toHtml();?>
                             </div>
                         </div>
              
                         <div class="col-main">
-                            <?php echo $this->getChildHtml('content') ?>
+                            <div class="col-50 col-left">
+                                <?php echo $this->getChildHtml('content') ?>
+                            </div>
+                            <div class="col-50 col-right">
+                                <?php echo $this->getLayout()->createBlock("cms/block")->setBlockId("general-customer-care")->toHtml();?>
+                            </div>
                         </div>
                         <div class="col-left sidebar">
                             <?php echo $this->getChildHtml('left') ?>
