@@ -36,7 +36,7 @@
                 </a>
             <?php elseif($_crumbInfo['last']): ?>
                 <a class="last" href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->htmlEscape($_crumbInfo['title']) ?>" rel="v:url" property="v:title">
-                        <strong><?php echo $this->htmlEscape($_crumbInfo['label']) . ' for sale' ?></strong>
+                        <strong><?php echo $this->htmlEscape($_crumbInfo['label']) ?></strong>
                 </a>
             <?php else: ?>
                 <span><?php echo $this->htmlEscape($_crumbInfo['label']) ?></span>
