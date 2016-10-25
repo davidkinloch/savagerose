@@ -62,7 +62,7 @@ $_imageHelper = Mage::helper('gene_bluefoot/image');
 
                         <?php if ($_image = $_entity->getFeaturedImage()): ?>
                             <a href="<?php echo $this->getEntityUrl($_entity); ?>" class="bluefoot-content-featured-image">
-                                <img src="<?php echo $_imageHelper->init($_image)->useConfig('medium'); ?>" alt="<?php echo $_entity->getTitle(); ?>"/>
+                                <img src="<?php echo $_imageHelper->init($_image)->useConfig('large'); ?>" alt="<?php echo $_entity->getTitle(); ?>"/>
                             </a>
                         <?php endif; ?>
 
